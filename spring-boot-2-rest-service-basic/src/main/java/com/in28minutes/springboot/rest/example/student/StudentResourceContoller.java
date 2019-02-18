@@ -81,4 +81,11 @@ public class StudentResourceContoller {
         TeacherModel teacherModelCreated = studentService.saveStudent(teacherModel);
         return new ResponseEntity<>(teacherModelCreated, HttpStatus.CREATED);
 	}
+
+	@PostMapping("/teachers")
+	public ResponseEntity<TeacherArray> findTeachers() {
+
+		TeacherArray teachers = studentService.findTeachers();
+		return new ResponseEntity<>(teachers, HttpStatus.CREATED);
+	}
 }

@@ -20,7 +20,6 @@ public class TeacherEntity implements Serializable {
         super();
     }
 
-
     public List<StudentEntity> getStudents() {
         return this.students;
     }

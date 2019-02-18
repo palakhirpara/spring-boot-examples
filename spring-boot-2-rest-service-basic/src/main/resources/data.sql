@@ -18,7 +18,4 @@ CREATE TABLE student (
     teacher_id decimal,
     foreign key(teacher_id) REFERENCES teacher(teacher_id));
 
-CREATE TABLE sal_emp (
-    name varchar(255),
-    pay_by_quarter A[]
-);
+

@@ -44,6 +44,23 @@ public class StudentInterfaceImpl implements StudentService {
     }
 
 
+    @Override
+    public TeacherArray findTeachers() {
+
+
+        TeacherArray teachersArray = new TeacherArray();
+        List<TeacherEntity> teacherEntities = teacherRepository.findAll();
+//        List<TeacherModel> teachers = new ArrayList<>();
+        for (TeacherEntity entity: teacherEntities)
+        {
+            TeacherModel teachersModel = new TeacherModel();
+            teachersModel = TeacherEntityToModel(entity);
+            teachersArray.add(teachersModel);
+        }
+        
+        return teachersArray;
+    }
+
     public TeacherEntity ModelToTeacherEntity(TeacherModel teacherModel) {
         TeacherEntity teacherEntity = new TeacherEntity();
         teacherEntity.setId(teacherModel.getId());
